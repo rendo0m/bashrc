@@ -1,11 +1,13 @@
 # Oh, THE COLORS!
+# enable color support of ls and also add handy aliases
+
 if command -v dircolors &> /dev/null; then
   if [[ -r ~/.dircolors ]]; then
     eval "$(dircolors -b ~/.dircolors)"
   else
     eval "$(dircolors -b)"
   fi
-
+ 
   alias ls='ls --color=auto'
   alias dir='dir --color=auto'
   alias vdir='vdir --color=auto'

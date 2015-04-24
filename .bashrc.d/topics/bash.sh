@@ -13,6 +13,10 @@ shell_options=(
   autocd
 )
 
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 if ! shopt -qs "${shell_options[@]}"; then
   echo "
 Warning! Not all shell options were set.
