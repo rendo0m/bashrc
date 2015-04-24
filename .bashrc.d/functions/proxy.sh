@@ -9,7 +9,7 @@ function proxy(){
 		if ! which cntlm > /dev/null; then
 			echo -n "Password : "
 			read -es password
-			#wanna kick next two line and hardcode your $proxyaddr ?
+			#wanna kick next two lines and hardcode your $proxyaddr ?
             echo -n "Proxy (host:port) : "
             read -e proxyaddr
 			export http_proxy=http://$username:$password@$proxyaddr/

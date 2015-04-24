@@ -7,14 +7,16 @@ if command -v dircolors &> /dev/null; then
   else
     eval "$(dircolors -b)"
   fi
- 
-  alias ls='ls --color=auto'
-  alias dir='dir --color=auto'
-  alias vdir='vdir --color=auto'
+  
+  export LS_OPTIONS='--color=auto'
+  
+  alias ls='ls $LS_OPTIONS'
+  alias dir='dir $LS_OPTIONS'
+  alias vdir='vdir $LS_OPTIONS'
 
-  alias grep='grep --color=auto -n'
-  alias fgrep='fgrep --color=auto -n'
-  alias egrep='egrep --color=auto -n'
+  alias grep='grep $LS_OPTIONS -n'
+  alias fgrep='fgrep $LS_OPTIONS -n'
+  alias egrep='egrep $LS_OPTIONS -n'
 fi
 
 # Use custom colors for the ant console output
