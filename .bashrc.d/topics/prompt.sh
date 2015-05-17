@@ -45,7 +45,7 @@ function __promptline_ps1 {
   # section "b" slices
 
   # Username
-  __promptline_wrapper "\u @ \h"  "$slice_prefix" "$slice_suffix" \
+  __promptline_wrapper "$(if [[ ${EUID} == 0 ]]; then echo ${warn_fg}'\u'; else echo '\u'; fi)${b_fg} @ \h"  "$slice_prefix" "$slice_suffix" \
     && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
   # section "c" header
@@ -362,6 +362,9 @@ function __promptline {
   local space=" "
  
   local sep_fg="${wrap}38;5;123${end_wrap}"
+
+  local warn_fg="${wrap}38;5;196${end_wrap}"
+  local warn_sep_fg="${wrap}38;5;52${end_wrap}"
  
   local sep="ǁ"
   local esep="ǁ═╗\n${space}╚═"
@@ -385,9 +388,6 @@ function __promptline {
 
   local d_fg="${wrap}38;5;10${end_wrap}"
   local d_sep_fg="${wrap}38;5;2${end_wrap}"
-
-  local warn_fg="${wrap}38;5;196${end_wrap}"
-  local warn_sep_fg="${wrap}38;5;52${end_wrap}"
 
   local x_fg="${wrap}38;5;14${end_wrap}"
   local x_sep_fg="${wrap}38;5;0${end_wrap}"
