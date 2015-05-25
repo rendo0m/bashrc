@@ -1,5 +1,7 @@
 # don't put duplicate lines in the history. See bash(1) for more options
+HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 HISTCONTROL=ignoreboth
+HISTIGNORE='&:clear:ls:cd:[bf]g:exit:[ t\]*'
 
 # Some handy shell options
 shell_options=(
