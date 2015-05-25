@@ -18,6 +18,10 @@ alias gf='git fetch'
 alias gb='git branch'
 alias gd='git diff'
 
+function gc(){
+    git commit -a -m "$*" --author="rendo0m <andi.arbait@gmail.com>"
+}
+
 # git completion for shortcuts
 complete -o default -o nospace -F _git_status g
 complete -o default -o nospace -F _git_checkout gco
