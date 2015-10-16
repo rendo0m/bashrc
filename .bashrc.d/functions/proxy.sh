@@ -1,6 +1,13 @@
 # This bash library contains useful functions to enable proxy on Ubuntu-Systems
 # Beware doing too much hardcoing in case giving VM to s'one else!
 
+# USE:
+# ~/> proxy
+#       - to activate proxy-settings
+# ~/> proxyoff
+#       - to delete your settings (DELETE PASSWORD FROM SETTINGS!!!!)
+
+
 # Enable Proxy
 function proxy() {
     echo -e
@@ -58,6 +65,7 @@ function proxy() {
             echo -e "\033[31m"
             sudo sh -c '(echo "Acquire::http::proxy \"'$http_proxy'\";"; echo "Acquire::ftp::proxy \"'$http_proxy'\";"; echo "Acquire::https::proxy \"'$http_proxy'\";") > /etc/apt/apt.conf'
             echo -e "\033[32mProxy environment variable set.\033[0m"
+            echo -e "\nInstall CNTLM now! But first try \"sudo apt-get update\" :-)"
             echo -e
         else
 # cannot be tabbed, otherwise no function of EOL
@@ -110,6 +118,7 @@ EOL
         echo -e "\033[31m"
         sudo sh -c '(echo "Acquire::http::proxy \"'$http_proxy'\";"; echo "Acquire::ftp::proxy \"'$http_proxy'\";"; echo "Acquire::https::proxy \"'$http_proxy'\";") > /etc/apt/apt.conf'
         echo -e "\033[32mProxy environment variable set.\033[0m"
+        echo -e "\nIf proxy is needed, use \"localhost:3128\""
         echo -e
         fi
 }
