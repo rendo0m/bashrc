@@ -101,7 +101,7 @@ EOL
         echo -e
         read -p "PassNTLMv2      " password
         sudo sh -c "sed -i 's/PassNTLMv2.*/PassNTLMv2\t$password/g' /etc/cntlm.conf"
-        sudo sh -c "/etc/init.d/cntlm start"
+        sudo sh -c "/etc/init.d/cntlm restart"
         export http_proxy='http://localhost:3128'
         export https_proxy=$http_proxy
         export ftp_proxy=$http_proxy
