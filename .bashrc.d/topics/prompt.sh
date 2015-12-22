@@ -3,7 +3,7 @@
 #
 
 function __promptline_last_exit_code {
-  local clean_symbol="✔"
+  local clean_symbol="✔ "
   local green_fg="${wrap}38;5;46${end_wrap}"
   if [ $last_exit_code -gt 0 ]; then
     printf "${warn_fg}$last_exit_code${space}${sep_fg}${sep}"
