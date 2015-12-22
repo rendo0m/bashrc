@@ -18,6 +18,14 @@ alias gf='git fetch'
 alias gb='git branch'
 alias gd='git diff'
 
+function gils(){
+    echo "$*" >> .git/info/exclude
+}
+
+function gi(){
+    echo "$*" >> .gitignore
+}
+
 function gc(){
     git commit -a -m "$*" --author="rendo0m <andi.arbait@gmail.com>"
 }
