@@ -10,3 +10,7 @@
 *.iml
 out/
 tags
+.bash_history
+.bash_logout
+.ssh/
+.viminfo
