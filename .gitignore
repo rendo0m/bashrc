@@ -14,3 +14,4 @@ tags
 .bash_logout
 .ssh/
 .viminfo
+.gitconfig
