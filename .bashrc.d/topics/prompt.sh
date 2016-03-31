@@ -43,10 +43,11 @@ function __promptline_ps1 {
   slice_empty_prefix="${b_fg}${space}"
   [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
   # section "b" slices
-
+  
   # Username
   __promptline_wrapper "$(if [[ ${EUID} == 0 ]]; then echo ${warn_fg}'\u'; else echo '\u'; fi)${b_fg} @ \h"  "$slice_prefix" "$slice_suffix" \
     && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
+  
 
   # section "c" header
   slice_prefix="${sep_fg}${sep}${space}${c_fg}"
@@ -73,12 +74,6 @@ function __promptline_ps1 {
   slice_empty_prefix="${x_fg}${space}"
   [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
   # section "x" slices
-
-  # Hostname if SSH'd into another host
-  __promptline_wrapper "$([[ -n ${ZSH_VERSION-} ]] \
-    && print %m || { [[ -n ${SSH_CLIENT} ]] \
-    && printf " %s" \\h; })" "$slice_prefix" "$slice_suffix" \
-    && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
   # section "d" header
   slice_prefix="${sep_fg}${sep}${space}${d_fg}"

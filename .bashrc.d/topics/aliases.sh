@@ -16,7 +16,7 @@ alias .5='cd ../../../../..'
 alias apt-get='sudo apt-get'
 alias update='sudo apt-get update && sudo apt-get upgrade'
 alias vi=vim
-alias svi='sudo vi'
+alias svi='sudo vim'
 alias edit='vim'
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
@@ -25,6 +25,8 @@ alias fastping='ping -c 100 -s.2'
 # alias rm='rm -i'
 # alias cp='cp -i'
 # alias mv='mv -i'
+
+alias ducks='du -cksh * | sort -rn | head'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

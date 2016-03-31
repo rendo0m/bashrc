@@ -12,3 +12,8 @@ out/
 tags
 *.old
 .vim/
+.bash_history
+.bash_logout
+.ssh/
+.viminfo
+.gitconfig
