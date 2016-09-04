@@ -17,3 +17,4 @@ tags
 .ssh/
 .viminfo
 .gitconfig
+.lesshst
