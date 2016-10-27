@@ -1,4 +1,4 @@
-# Change git author information if I am at work.
+# Change git author information if I am at home.
 if [[ "${PLATFORM}" == "cygwin" ]]; then
   hostname="${COMPUTERNAME}.${USERDNSDOMAIN}"
 else
@@ -6,7 +6,7 @@ else
 fi
 
 # @PERSONALIZE@
-if [[ ${hostname} =~ .+\.(ecovate|readytalk)\.com ]]; then
+if [[ ${hostname} =~ .+\.(raspe|outerspace) ]]; then
   export GIT_AUTHOR_EMAIL="andi.arbait@gmail.com"
   export GIT_COMMITTER_EMAIL=${GIT_AUTHOR_EMAIL}
 fi
@@ -27,7 +27,7 @@ function gi(){
 }
 
 function gc(){
-    git commit -a -m "$*" --author="rendo0m <andi.arbait@gmail.com>"
+    git commit -a -m "$*"
 }
 
 # git completion for shortcuts

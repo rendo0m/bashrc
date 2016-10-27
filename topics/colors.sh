@@ -7,9 +7,9 @@ if command -v dircolors &> /dev/null; then
   else
     eval "$(dircolors -b)"
   fi
-  
+
   export LS_OPTIONS='--color=auto'
-  
+
   alias ls='ls $LS_OPTIONS'
   alias dir='dir $LS_OPTIONS'
   alias vdir='vdir $LS_OPTIONS'

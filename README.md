@@ -10,13 +10,11 @@ Star the other projects! :)
 
 ## Install
 
-git init
+[in ~/ do]
 
-git remote add origin https://github.com/rendo0m/bashrc
+git clone https://github.com/rendo0m/bashrc.git .bashrc.d
 
-git fetch origin
-
-git checkout -b master --track origin/master
+.bashrc.d/install.sh
 
 ## Troubleshooting
 
