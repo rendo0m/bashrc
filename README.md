@@ -14,7 +14,7 @@ Star the other projects! :)
 
 git clone https://github.com/rendo0m/bashrc.git .bashrc.d
 
-.bashrc.d/install.sh
+. .bashrc.d/install.sh
 
 ## Troubleshooting
 
