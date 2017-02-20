@@ -62,7 +62,7 @@ function proxy() {
                 alias curl="curl -x $http_proxy"
             fi
 # Check if you can reach www.google.de, if you can't there might be something wrong with your password
-            timeout 4s curl www.google.de
+            timeout 4s wget www.google.de
             if [ "$?" -gt 0 ];
             then
               echo -e
