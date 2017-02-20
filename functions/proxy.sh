@@ -61,12 +61,23 @@ function proxy() {
             if which curl > /dev/null; then
                 alias curl="curl -x $http_proxy"
             fi
-            echo -e
-            echo -e "\033[31m"
-            sudo sh -c '(echo "Acquire::http::proxy \"'$http_proxy'\";"; echo "Acquire::ftp::proxy \"'$http_proxy'\";"; echo "Acquire::https::proxy \"'$http_proxy'\";") > /etc/apt/apt.conf'
-            echo -e "\033[32mProxy environment variable set.\033[0m"
-            echo -e "\nInstall CNTLM now! But first try \"sudo apt-get update\" :-)"
-            echo -e
+# Check if you can reach www.google.de, if you can't there might be something wrong with your password
+            timeout 4s curl www.google.de
+            if [ "$?" -gt 0 ];
+            then
+              echo -e
+              echo -e "\033[31m\nUpps there went something wrong, please try again.\033[0m"
+              proxy
+              echo -e
+            else
+              echo -e
+              echo -e "\033[31m"
+              sudo sh -c '(echo "Acquire::http::proxy \"'$http_proxy'\";"; echo "Acquire::ftp::proxy \"'$http_proxy'\";"; echo "Acquire::https::proxy \"'$http_proxy'\";") > /etc/apt/apt.conf'
+              echo -e "\033[32mProxy environment variable set.\033[0m"
+              echo -e "\033[31m\nRemember to tun \[\033[34m\nproxypff\033[0m if you want to delete your proxy-settings. "
+              echo -e "\nInstall CNTLM now! But first try \"sudo apt-get update\" :-)"
+              echo -e
+            fi
         else
 # cannot be tabbed, otherwise no function of EOL
 sudo sh -c "sudo cat > /etc/cntlm.conf" <<EOL
