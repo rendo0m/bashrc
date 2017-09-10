@@ -40,10 +40,10 @@ source_dir topics
 if [[ -z "$TMUX" ]]; then
     tmux has-session &> /dev/null
     if [ $? -eq 1 ]; then
-       exec tmux new
+       exec tmux new -s tuxmux
        exit
     else
-       exec tmux attach
+       exec tmux attach -s tuxmux
        exit
     fi
 fi
