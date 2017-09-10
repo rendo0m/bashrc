@@ -35,4 +35,15 @@ source_platform
 # Source the rest of the things.
 source_dir topics
 
-
+# Start TMUX
+# This should always be run last either in .bashrc or as a script in .bashrc.d
+if [[ -z "$TMUX" ]]; then
+    tmux has-session &> /dev/null
+    if [ $? -eq 1 ]; then
+       exec tmux new
+       exit
+    else
+       exec tmux attach
+       exit
+    fi
+fi
