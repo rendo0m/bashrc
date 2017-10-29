@@ -13,7 +13,7 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
 # some more command aliases
-alias apt='sudo apt-get'
+alias apt='sudo apt'
 alias update='sudo apt update && sudo apt upgrade'
 alias vi=vim
 alias svi='sudo vim'
