@@ -34,6 +34,7 @@ start_agent() {
 }
 
 ssh-login() {
+  local SSH_ENV="${HOME}/.ssh/environment"
   if [[ -f "${SSH_ENV}" ]]; then
     # Find SSH_AUTH_SOCK and SSH_AGENT_PID of the available daemon
     source "${SSH_ENV}" > /dev/null
