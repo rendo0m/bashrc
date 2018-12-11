@@ -398,12 +398,16 @@ function __promptline {
   fi
 }
 
-if [[ -n ${ZSH_VERSION-} ]]; then
-  if [[ ! ${precmd_functions[(r)__promptline]} == __promptline ]]; then
-    precmd_functions+=(__promptline)
-  fi
-else
-  if [[ ! "$PROMPT_COMMAND" == *__promptline* ]]; then
-    PROMPT_COMMAND='__promptline;'$'\n'"$PROMPT_COMMAND"
+if [[ ${OS} =~ Windows ]]; then
+   export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[\033[38;5;3m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+else 
+  if [[ -n ${ZSH_VERSION-} ]]; then
+    if [[ ! ${precmd_functions[(r)__promptline]} == __promptline ]]; then
+      precmd_functions+=(__promptline)
+    fi
+  else
+    if [[ ! "$PROMPT_COMMAND" == *__promptline* ]]; then
+      PROMPT_COMMAND='__promptline;'$'\n'"$PROMPT_COMMAND"
+    fi
   fi
 fi
