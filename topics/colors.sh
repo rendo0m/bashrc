@@ -14,7 +14,7 @@ if command -v dircolors &> /dev/null; then
   alias dir='dir $LS_OPTIONS'
   alias vdir='vdir $LS_OPTIONS'
 
-  alias grep='grep $LS_OPTIONS -n'
+  alias grep='grep $LS_OPTIONS'
   alias fgrep='fgrep $LS_OPTIONS -n'
   alias egrep='egrep $LS_OPTIONS -n'
 fi
