@@ -17,6 +17,7 @@ alias apt='sudo apt'
 alias update='sudo apt update && sudo apt upgrade'
 alias vi=vim
 alias svi='sudo vim'
+alias top=htop
 alias edit='vim'
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
