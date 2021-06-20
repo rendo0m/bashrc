@@ -1,10 +1,10 @@
-if command -v go &> /dev/null; then
+if command -v /usr/local/go/bin/go &> /dev/null; then
   case ${PLATFORM} in
     darwin)
       GOROOT=$(brew --prefix go)
       ;;
     *)
-      GOROOT=/usr/lib/go
+      GOROOT=/usr/local/go
       ;;
   esac
 
