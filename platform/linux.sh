@@ -2,4 +2,6 @@
 [[ -e /usr/sbin/service ]] && alias service='sudo service'
 
 # make less more friendly for non-text input files, see lesspipe(1)
-eval "$(SHELL=/bin/sh lesspipe)"
+if test -x lesspipei; then 
+  eval "$(SHELL=/bin/sh lesspipe)"
+fi

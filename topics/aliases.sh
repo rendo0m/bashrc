@@ -13,7 +13,7 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
 # got vim?
-if which vim 2> /dev/null; then 
+if test -x vim 2> /dev/null; then 
   alias vi=vim
   export EDITOR="vim"
 else 
