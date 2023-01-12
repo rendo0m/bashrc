@@ -15,9 +15,12 @@ alias .5='cd ../../../../..'
 # got vim?
 if which vim 2> /dev/null; then 
   alias vi=vim
+  export EDITOR="vim"
 else 
   alias vim=vi  
+  export EDITOR="vi"
 fi
+export VISUAL="${EDITOR}"
 
 # some more command aliases
 alias apt='sudo apt'
