@@ -12,10 +12,16 @@ alias .....='cd ../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
+# got vim?
+if which vim 2> /dev/null; then 
+  alias vi=vim
+else 
+  alias vim=vi  
+fi
+
 # some more command aliases
 alias apt='sudo apt'
 alias update='sudo apt update && sudo apt upgrade'
-alias vi=vim
 alias svi='sudo vim'
 alias top=htop
 alias edit='vim'
