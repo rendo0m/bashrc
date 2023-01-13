@@ -31,4 +31,5 @@ set autowrite           " Automatically save before commands like :next and :mak
 set hidden             " Hide buffers when they are abandoned
 set mouse=
 set tabstop=2
+set noundofile
 "set mouse=a            " Enable mouse usage (all modes) in terminals
