@@ -39,4 +39,4 @@ source_dir topics
 if [ -d "$HOME/.local/.bashrc.d/" ]; then
   source_dir ../.local/.bashrc.d
 fi
-if [ -f /usr/bin/neofetch ]; echo -e; then neofetch --color_blocks off; fi
+if [ -f /usr/bin/fastfetch ]; echo -e; then fastfetch --structure Title:Separator:OS:Host:Kernel:Bios:Uptime:Packages:Shell:Display:Terminal:CPU:GPU:Memory:Swap:Disk:LocalIp:PublicIp:NetIO:Battery:Locale:; fi
